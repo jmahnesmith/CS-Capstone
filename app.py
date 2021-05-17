@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'Testing@3122'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///webapp.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 login_manager = LoginManager()
