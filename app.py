@@ -14,7 +14,7 @@ model = load_model('20210515-19291621106993-89Percent.h5')
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'Testing@3122'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////OneDrive/Class/WGU/Computer Science Capstone - C964/Task2/WEB_APP/webapp.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///webapp.db'
 
 db = SQLAlchemy(app)
 login_manager = LoginManager()
