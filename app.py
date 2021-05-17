@@ -4,6 +4,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required
 from keras.models import load_model
 from keras.preprocessing import image
 from keras.applications.imagenet_utils import preprocess_input
+import keras.backend as K
 from werkzeug.utils import secure_filename
 import numpy as np
 import os
@@ -92,6 +93,8 @@ def upload():
         #Make prediction
         prediction = model_predict(file_path, model)
         print(prediction[0])
+
+        K.clear_session()
 
         return convert_prediction(prediction[0])
     return None
